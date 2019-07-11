@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body bgcolor="#99CC66">
+<hr>
+SIMPLE CALCULATOR
+<br>
+<hr>
+
+<img src="https://cdn.hand2mind.com/productimages/5645-web_398.jpg"
+     style="max-width:30%;max-height:30%" >
+<hr>
+<center>RESULT: <p type="text" th:text="${result}" type="text" ></center>
+<br>
+<form method="post" th:action="@{/}" th:object="${operationModel}">
+    <input type="text" th:field="*{a}" placeholder="0">     <input type="text" th:field="*{b}" placeholder="0">
+    <br>
+    CHOOSE OPERATION:
+    <br>
+    <input type="submit" class="button" name="add" value="+">
+    <input type="submit" class="button" name="sub" value="-">
+    <input type="submit" class="button" name="mul" value="*">
+    <input type="submit" class="button" name="div" value="/">
+    <br>
+</form>
+<hr>
+<br>
+AVERAGE CALCULATOR
+<form method="post" th:action="@{/}" th:object="${operationModel}">
+    <input type="text" th:field="*{a}" placeholder="0">
+    <br>
+    CHOOSE OPERATION:
+    <br>
+    <input type="submit" class="button" name="sqr" value="Kwadrat">
+    <input type="submit" class="button" name="ele" value="Pierwiastek">
+    <input type="submit" class="button" name="fac" value="Silnia">
+    <input type="submit" class="button" name="prm" value="Czy pierwsza?">
+</form>
+
+</body>
+</html>
